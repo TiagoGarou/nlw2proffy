@@ -1,0 +1,124 @@
+#page-landing {
+background-color: var(--color-primary);
+}
+
+#page-landing #container{
+    color: var(--color-text-in-primary);
+}
+
+.logo-container img{
+    height: 10rem;
+}
+
+.logo-container{
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.logo-container h2{
+    font-weight: 500;
+    font-size: 4.0rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+}
+
+.hero-image{
+    width: 100%;
+
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.buttons-container a {
+    width: 30rem;
+    height: 7.8rem;
+
+    border-radius: .8rem; /*borda do botão*/
+    margin-right: 1.6rem; /*distancia entre os botões*/
+    font: 300 2.4rem Archivo;
+    display: flex; /*o flex vai permitir o desenho do botão alinhar com o q tá escrito no botão*/
+    align-items: center;
+    justify-content: center; /*alinhou os botões ao centro da caixa*/
+    text-decoration: none; /*isso tira o sublinhado dos botões*/
+    transition: background 0.2s;
+    color: var(--color--button-text); /*cor do q tá escrito nos botões*/
+
+}
+
+.buttons-container a img{/*imagens dos botões*/
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+
+.buttons-container a.study{
+    background: var(--color-primary-lighter);
+}  /*cores diferenciadas para os dois botões*/
+
+.buttons-container a.study:hover { /*Esse comando faz assim que o mouse passar sobre o botão, ele brilhar para indicar atividade*/
+    background: var(--color-primary-light);
+}
+
+.buttons-container a.give-classes{
+    background: var(--color-secondary);
+    margin-right: 0;
+}
+.buttons-container a.give-classes:hover {
+    background: var(--color-secondary-dark);
+}
+.total-connections{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.total-connections img {
+    margin-left: 0.8rem; /*afasta o coraçãozinho do lado da frase*/
+}
+@media (max-width: 699px){
+    :root{
+        font-size: 40%S; /*modificar as medidas em rem*/
+    }
+}
+
+@media (min-width: 1100px) { /*esse comando faz a transição de mobile para desktop*/
+    #page-landing #container {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 350px 1fr;
+        grid-template-areas:
+        "proffy image image"
+        "button button texting";
+        gap: 60px;
+    }
+    .logo-container{
+        grid-area: proffy;
+        text-align: initial;
+        align-self: center; /*alinha o conteudo da imagem ao centro*/
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .logo-container img{
+        height:100%;
+
+    }
+    .hero-image{
+        grid-area: image;
+        height: 350px;
+    }
+    .buttons-container{
+        grid-area: button;
+        justify-content: flex-start;
+        margin: 0;
+    }
+    .total-connections{
+        grid-area: texting;
+        justify-self: end;
+    }
+
+}
